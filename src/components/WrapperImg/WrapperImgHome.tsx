@@ -5,12 +5,12 @@ import {
   WrapperTitle,
 } from './WrapperImgHomeStyles';
 
-type AboutProps = {
+type WrapperImgProps = {
   img: string,
   title: string | null
 }
 
-function WrapperImgHome({ img, title }: AboutProps) {
+function WrapperImgHome({ img, title }: WrapperImgProps) {
   return (
     <WrapperImg>
       <WrapperTitle>

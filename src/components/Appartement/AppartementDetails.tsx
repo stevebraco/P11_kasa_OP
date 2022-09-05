@@ -1,14 +1,8 @@
-import React, { useState } from 'react';
-import { Appartement } from '../../hooks/useFetch';
+import React from 'react';
 import ButtonToggleList from '../Button/ButtonToggleList';
 import Host from '../Host/Host';
 import Ratings from '../Ratings/Ratings';
 import {
-  DisplayNumber,
-  AppartementContainerImg,
-  AppartementIconBack,
-  AppartementIconNext,
-  AppartementImg,
   AppartementInfo,
   AppartementInfoRight,
   AppartementStyles,
@@ -17,6 +11,8 @@ import {
   AppartementButton,
 } from './AppartementStyles';
 import Tags from '../Tags/Tags';
+import Gallery from '../Gallery/Gallery';
+import Appartement from '../../types/Appartement';
 
 function AppartementDetails({
   title,
@@ -28,8 +24,6 @@ function AppartementDetails({
   equipments,
   tags,
 }: Appartement) {
-  const [indexImg, setIndexImg] = useState(0);
-
   const locationCity = (nameLocation) => {
     const region = nameLocation?.split('-')[0];
     const splitCity = nameLocation?.split('-')[1];
@@ -38,36 +32,11 @@ function AppartementDetails({
     return `${city}, ${region}`;
   };
 
-  const handleNextImage = () => {
-    setIndexImg(indexImg + 1);
-    if (indexImg === pictures.length - 1) {
-      setIndexImg(0);
-    }
-  };
-  const handlePrevImage = () => {
-    setIndexImg(indexImg - 1);
-    if (indexImg < 1) {
-      setIndexImg(pictures.length - 1);
-    }
-  };
   return (
     <AppartementStyles>
-      <AppartementContainerImg>
-        <AppartementIconBack onClick={handlePrevImage}>
-          <img src="/images/arrow-back.svg" alt="précédente" />
-        </AppartementIconBack>
-        <AppartementIconNext onClick={handleNextImage}>
-          <img src="/images/arrow-next.svg" alt="suivante" />
-        </AppartementIconNext>
-        <AppartementImg src={pictures[indexImg]} alt={title} />
-        <DisplayNumber>
-          {indexImg + 1}
-          /
-          {pictures.length}
-        </DisplayNumber>
-      </AppartementContainerImg>
+      <Gallery pictures={pictures} title={title} />
       <AppartementInfo>
-        <div className="Appartement__info-left">
+        <div>
           <AppartementTitle>{title}</AppartementTitle>
           <AppartementSubtitle>{locationCity(location)}</AppartementSubtitle>
           <Tags tags={tags} />

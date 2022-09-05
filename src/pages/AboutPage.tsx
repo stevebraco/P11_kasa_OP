@@ -10,7 +10,7 @@ const Container = styled.section`
     padding: 0 15px 25px;
   `;
 
-function Apropos() {
+function AboutPage() {
   return (
     <Container>
       <WrapperImgHome img="./images/paysage-title2.png" title={null} />
@@ -22,4 +22,4 @@ function Apropos() {
   );
 }
 
-export default Apropos;
+export default AboutPage;

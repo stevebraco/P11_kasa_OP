@@ -1,10 +1,10 @@
 import React from 'react';
 import Error from '../components/Error/Error';
 
-function ErrorScreen() {
+function ErrorPage() {
   return (
     <Error />
   );
 }
 
-export default ErrorScreen;
+export default ErrorPage;

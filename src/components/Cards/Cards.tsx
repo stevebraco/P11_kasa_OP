@@ -1,5 +1,5 @@
 import React from 'react';
-import { Appartement } from '../../hooks/useFetch';
+import Appartement from '../../types/Appartement';
 import Card from '../Card/Card';
 import CardsStyles from './CardsStyles';
 

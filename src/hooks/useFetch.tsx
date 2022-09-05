@@ -1,22 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-
-type Host = {
-  name: string;
-  picture: string;
-}
-export type Appartement = {
- id: string;
- title: string;
- cover: string;
- pictures: string[];
- description: string;
- host: Host;
- rating: string;
- location: string;
- equipments: string[];
- tags: string[];
-}
+import Appartement from '../types/Appartement';
 
 const useFetch = () => {
   const [loading, setLoading] = useState(true);

@@ -12,7 +12,7 @@ function Navigation() {
       </LinkNav>
       <LinkNav
         isactive="true"
-        to="/apropos"
+        to="/about"
       >
         A Propos
       </LinkNav>

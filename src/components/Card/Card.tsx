@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Appartement } from '../../hooks/useFetch';
+import Appartement from '../../types/Appartement';
 import {
   CardFigcaption,
   CardFigure,

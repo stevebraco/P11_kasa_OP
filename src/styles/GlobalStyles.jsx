@@ -100,6 +100,5 @@ button {
 export const WrapperButton = styled.div`
   padding: 30px 20px;
   background-color: #f6f6f6;
-  /* height: 205px; */
   min-height: 170px;
 `;
