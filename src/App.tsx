@@ -1,32 +1,34 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Apropos from './Pages/Apropos';
-import ErrorScreen from './Pages/ErrorScreen';
-import HomeScreen from './Pages/HomeScreen';
-import AppartementScreen from './Pages/AppartementScreen';
+import AboutPage from './pages/AboutPage';
+import HomePage from './pages/HomePage';
+import AppartementPage from './pages/AppartementPage';
 import useFetch from './hooks/useFetch';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
+import GlobalStyles from './styles/GlobalStyles';
+import ErrorPage from './pages/ErrorPage';
 
 function App() {
   const { appartements, loading } = useFetch();
 
   return (
     <BrowserRouter>
+      <GlobalStyles />
       <Header />
       <Routes>
         <Route
           path="/"
-          element={<HomeScreen appartements={appartements} loading={loading} />}
+          element={<HomePage appartements={appartements} loading={loading} />}
         />
         <Route
           path="/:id"
           element={
-            <AppartementScreen appartements={appartements} loading={loading} />
+            <AppartementPage appartements={appartements} loading={loading} />
           }
         />
-        <Route path="/apropos" element={<Apropos />} />
-        <Route path="/*" element={<ErrorScreen />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/*" element={<ErrorPage />} />
       </Routes>
       <Footer />
     </BrowserRouter>
