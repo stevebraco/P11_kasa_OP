@@ -14,7 +14,7 @@ function WrapperImgHome({ img, title }: WrapperImgProps) {
   return (
     <WrapperImg>
       <WrapperTitle>
-        <h1>{title && title}</h1>
+        <h1>{title}</h1>
       </WrapperTitle>
       <WrapperImage
         className="wrapperImg__img"
