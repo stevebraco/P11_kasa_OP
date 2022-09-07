@@ -2,10 +2,6 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import colors from '../../utils/colors';
 
-type Active = {
-  isactive: any
-}
-
 export const Nav = styled.nav`
   display: flex;
   flex-direction: row;
@@ -16,7 +12,7 @@ export const Nav = styled.nav`
   }
 `;
 
-export const LinkNav = styled(NavLink)<Active>`
+export const LinkNav = styled(NavLink)`
   color: ${colors.primary};
   font-size: 24px;
 

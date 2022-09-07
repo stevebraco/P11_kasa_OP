@@ -5,13 +5,11 @@ function Navigation() {
   return (
     <Nav>
       <LinkNav
-        isactive="true"
         to="/"
       >
         Accueil
       </LinkNav>
       <LinkNav
-        isactive="true"
         to="/about"
       >
         A Propos
